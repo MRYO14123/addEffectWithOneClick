@@ -17,7 +17,7 @@ add_fill_layer_effect_switch_btn = None
 
 # エフェクト名とiconのファイル名を設定
 icon_dir = {
-    "Switch": "icon_Switch.png",
+    "AddNewLayer": "icon_Switch.png",
     "Mask": "icon_Mask.png",
     "Paint": "icon_Paint.png",
     "Fill": "icon_Fill.png",
@@ -27,7 +27,7 @@ icon_dir = {
     "CompareMask": "icon_CompareMask.png",
     "ColorSelection": "icon_ColorSelection.png",
     "AnchorPoint": "icon_AnchorPoint.png",
-    "icon_add_effect_layer": "icon_add_effect_layer.png",
+    "AddEffectToLayer": "icon_add_effect_layer.png",
     "AmbientOcclusion": "icon_AmbientOcclusion.png",
     "Curvature": "icon_Curvature.png",
     "Position": "icon_Position.png",
@@ -115,10 +115,10 @@ def start_plugin():
             row_layout.addWidget(btn)
 
             # 新規レイヤー追加ボタン、塗りつぶしレイヤーボタン、その他ボタンの制御
-            if effect_name == "Switch":
+            if effect_name == "AddNewLayer":
                 add_layer_switch_btn = btn
                 btn.clicked.connect(on_add_layer_button_switch_clicked)
-            elif effect_name == "icon_add_effect_layer":
+            elif effect_name == "AddEffectToLayer":
                 add_fill_layer_effect_switch_btn = btn
                 btn.clicked.connect(on_add_fill_layer_effect_button_switch_clicked)
             else:
@@ -143,7 +143,7 @@ def make_tool_btn(icon, btn_size, effect_name):
     tb.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
     tb.setFocusPolicy(QtCore.Qt.NoFocus)
     tb.setStyleSheet(NORMAL_STYLE)
-    if effect_name == "Switch" and add_layer_switch_flag:
+    if effect_name == "AddNewLayer" and add_layer_switch_flag:
         tb.setStyleSheet(SELECTED_STYLE)
     return tb
 
