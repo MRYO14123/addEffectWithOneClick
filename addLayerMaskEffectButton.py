@@ -80,12 +80,12 @@ def start_plugin():
     widget = QtWidgets.QWidget()
     widget.setWindowTitle("Add Effect")
 
-    # 外側は縦レイアウト。行（HBox）が増えるイメージ
+    # 縦レイアウト
     outer_layout = QtWidgets.QVBoxLayout(widget)
     outer_layout.setContentsMargins(0,0,0,0)
     outer_layout.setSpacing(0)
 
-    # アイコンのリスト化（順序を保つ）
+    # アイコンのリスト化
     items = list(icon_dir.items())
     total = len(items)
     if total == 0:
@@ -96,10 +96,9 @@ def start_plugin():
     # 必要行数
     rows = math.ceil(total / MAX_PER_ROW)
 
-    # iterator を作って islice で分割していく（元の順を保持）
     it = iter(items)
     for r in range(rows):
-        # その行専用のコンテナ＆横レイアウト
+        # 横レイアウト
         row_container = QtWidgets.QWidget()
         row_layout = QtWidgets.QHBoxLayout(row_container)
         row_layout.setContentsMargins(0,0,0,0)
@@ -115,7 +114,7 @@ def start_plugin():
             btn = make_tool_btn(icon, btn_size, effect_name)
             row_layout.addWidget(btn)
 
-            # Switchボタンだけ
+            # 新規レイヤー追加ボタン、塗りつぶしレイヤーボタン、その他ボタンの制御
             if effect_name == "Switch":
                 add_layer_switch_btn = btn
                 btn.clicked.connect(on_add_layer_button_switch_clicked)
@@ -127,7 +126,6 @@ def start_plugin():
 
         outer_layout.addWidget(row_container, 0, QtCore.Qt.AlignLeft)
 
-    # 必要なら伸縮を抑えるために余白用の伸ばしを追加
     outer_layout.addStretch(1)
 
     sp.ui.add_dock_widget(widget)
@@ -149,7 +147,7 @@ def make_tool_btn(icon, btn_size, effect_name):
         tb.setStyleSheet(SELECTED_STYLE)
     return tb
 
-# switch_buttonの作成
+# switch_buttonのスタイル変更
 def on_add_layer_button_switch_clicked():
     global add_layer_switch_flag, add_layer_switch_btn
     add_layer_switch_flag = not(add_layer_switch_flag)
@@ -159,7 +157,7 @@ def on_add_layer_button_switch_clicked():
     else:
         add_layer_switch_btn.setStyleSheet(NORMAL_STYLE)
 
-
+# add_fill_layer_effect_switch_buttonのスタイル変更
 def on_add_fill_layer_effect_button_switch_clicked():
     global add_fill_layer_effect_switch_flag, add_fill_layer_effect_switch_btn
     add_fill_layer_effect_switch_flag = not(add_fill_layer_effect_switch_flag)
@@ -204,6 +202,7 @@ def add_layer_mask_effect(effect_name):
         print(f"スクリプト処理中に予期せぬ例外が発生しました: {e}")
 
 
+# 既存の塗りつぶしレイヤーにエフェクトを追加
 def add_layer_effect(effect_name):
     try:
         stack = sp.textureset.get_active_stack()
