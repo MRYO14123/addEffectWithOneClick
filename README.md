@@ -2,7 +2,7 @@
 
 https://www.youtube.com/watch?v=tRJmgN7NDtw
 
-# 使い方
+# 利用方法
 1. ソースコードとiconフォルダをダウンロードします。
 2. Substance Painterの「Pythonタブ＞Plugins Folder」をクリックします。
 3. フォルダ内のpluginsフォルダにダウンロードしたファイルをコピーします。
