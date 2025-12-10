@@ -8,6 +8,11 @@ https://www.youtube.com/watch?v=tRJmgN7NDtw
 3. フォルダ内のpluginsフォルダにダウンロードしたファイルをコピーします。
 4. Substance Painter「Reload Plugins Folder」をクリックし、「addLayerMaskEffectButon」プラグインを有効にすると使えます。
 
+ファイル構成
+<img width="1049" height="259" alt="image" src="https://github.com/user-attachments/assets/a0c8ff04-8dd9-417a-a76a-1e4d6a034c99" />
+
+
+
 # できること
 ・ワンクリックでレイヤー、マスク、エフェクトを追加することができます。　<br>
 ・エフェクトの追加は、新規レイヤー / 既存レイヤーどちらにも対応しています。<br>
