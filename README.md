@@ -1,35 +1,45 @@
 # サンプル動画
+https://github.com/user-attachments/assets/5a5a4efb-03df-41ef-be8e-9f1d15bbe2dc
 
-https://www.youtube.com/watch?v=tRJmgN7NDtw
 
 # 利用方法
 1. ソースコードとiconフォルダをダウンロードします。
 2. Substance Painterの「Pythonタブ＞Plugins Folder」をクリックします。
-3. フォルダ内のpluginsフォルダにダウンロードしたファイルをコピーします。
-4. Substance Painter「Reload Plugins Folder」をクリックし、「addEffectWithOneClick」プラグインを有効にすると使えます。
+3. フォルダ内のpluginsフォルダを開き、ダウンロードしてきたiconフォルダとaddEffectButton.py を置きます。
+4. Substance Painter「Reload Plugins Folder」をクリックし、「addEffectButon」スクリプトを有効にすると使えます。
 
-ファイル構成
-<img width="1049" height="259" alt="image" src="https://github.com/user-attachments/assets/a0c8ff04-8dd9-417a-a76a-1e4d6a034c99" />
+<br>
+3のファイル配置イメージ<br>
+<img width="781" height="231" alt="image" src="https://github.com/user-attachments/assets/0a19f2c5-50bc-4e09-a677-28b222eb8702" />
+<br>
+<br>
+
+
+4スクリプトの有効化<br>
+<img width="301" height="118" alt="image" src="https://github.com/user-attachments/assets/7d9f53a7-086e-490c-91af-424a5b283c3e" />
+<br>
+<br>
 
 
 
-# できること
-・ワンクリックでレイヤー、マスク、エフェクトを追加することができます。　<br>
-・エフェクトの追加は、新規レイヤー / 既存レイヤーどちらにも対応しています。<br>
-・マスクにエフェクトを追加するだけでなく、塗りつぶしレイヤーにもエフェクトを追加することができます。<br>
-・複数選択にも対応しています。<br>
+#### ■できること
 
-# 機能
+<span style="color: #000000; ">・ワンクリックでレイヤー、マスク、エフェクトを追加<br>・エフェクト追加は、新規レイヤー / 既存レイヤーどちらにも対応<br>・複数選択にエフェクト追加<br>
+・塗りつぶしレイヤー、ペイントレイヤーにもエフェクトを追加可能</span>
 
-<img width="282" height="97" alt="image" src="https://github.com/user-attachments/assets/31cc023c-8143-4877-8796-11190a546e2e" />
 
-■ ＋ボタン<br>
-  ON：新規で塗りつぶしレイヤーとマスクを追加します。<br>
-  　　マスクに任意で選択したエフェクトを付与します。<br>
-  OFF：選択した既存のレイヤーにマスクとエフェクトを付与します。<br>
-  　　　レイヤーが選択されていない場合は、動作しません。<br>
+#### ■機能
 
-■ ←ボタン<br>
-  ON：塗りつぶしレイヤーなどに直接エフェクトを付与します。<br>
-  OFF：選択した既存のレイヤーにマスクとエフェクトを付与します。<br>
-  　　　レイヤーが選択されていない場合は、動作しません。<br>
+**・新規追加ボタン**<br>
+ON：新規で塗りつぶしレイヤーとマスクを追加します。<br>
+　　マスクに任意で選択したエフェクトを付与します。<br>
+OFF：選択しているレイヤーにマスクとエフェクトを付与します。<br>
+　　レイヤーが選択されていない場合は、動作しません。<br>
+
+**・塗りつぶしレイヤーボタン**<br>
+有効な時、塗りつぶしレイヤーにエフェクトを付与します。<br>
+この時、マスクは付与されません。<br>
+
+**・マスクレイヤーボタン**<br>
+有効な時、レイヤーのマスクに対してエフェクトを付与します。<br>
+レイヤーにマスクが付いていない場合、合わせてマスクも作成します。<br>
