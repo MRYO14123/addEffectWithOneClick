@@ -43,3 +43,64 @@ OFF：選択しているレイヤーにマスクとエフェクトを付与し�
 **・マスクレイヤーボタン**<br>
 有効な時、レイヤーのマスクに対してエフェクトを付与します。<br>
 レイヤーにマスクが付いていない場合、合わせてマスクも作成します。<br>
+<br>
+
+# ■ボタンの追加・削除方法
+現状、目についたエフェクトを片っ端から追加したので、ボタンだらけになってます。<br>
+そこで、個人でカスタマイズしたい人向けに、新たにエフェクトを追加する方法と
+表示されてるボタンを減らす方法について説明します。<br>
+
+## ボタンの追加方法
+<br>
+①アイコンとなる画像を`icon`フォルダに入れます。（アイコンサイズ32px）<br>
+　アイコンは頑張って作ってください！<br>
+<br>
+<img width="645" height="320" alt="image" src="https://github.com/user-attachments/assets/ca023d47-3ee8-4b87-a252-93d46c1b4841" /><br>
+
+<br>
+<img width="37" height="34" alt="image" src="https://github.com/user-attachments/assets/81376042-4ba5-4bcc-b4f0-4b7b0203b440" /><br>
+TEST.png<br><br>
+
+
+②`addEffectButton.py`を開き、`effect_info_map`変数を見つけ出し、それに追加したいエフェクト情報を入力します。<br>
+　入力する内容としては、下記の四つです。<br>
+ <br>
+
+
+1. エフェクトの名前（ホバーしたときに表示されるだけなので正直なんでもいい）<br>
+2. アイコンのファイル名<br>
+3. フィルター or ジェネレーター<br>
+4. 検索する際に使うやつ<br>
+
+<img width="579" height="115" alt="image" src="https://github.com/user-attachments/assets/2726debb-cd36-4a10-82f6-4d05e205dab3" /><br>
+
+
+試しに、`effect_info_map`変数の一番下にフィルターの`Blur Directional`を追加してみます。<br>
+（追加する場所によってボタンが表示される位置が変わってくるので注意）<br>
+
+追加したのがこちら<br>
+<img width="486" height="104" alt="image" src="https://github.com/user-attachments/assets/9e508e48-ba96-434d-81ea-1a598c5166e8" /><br><br>
+
+③あとは変更したソースコードを保存し、Substance painter上で、プラグインフォルダをリロードします。<br>
+　addEffectButtonがすでに有効になっている場合は、無効にして再度有効にするとボタンが表示されると思います。<br>
+　以上が追加方法でした！<br>
+<br>
+<img width="303" height="384" alt="image" src="https://github.com/user-attachments/assets/a22398e9-2c95-4a01-af19-f783a689e19d" />
+
+
+## ボタンの削除方法<br>
+削除方法は簡単で、`effect_info_map`変数の中身をコメントアウトするか、削除することでボタンが表示されなくなります。<br>
+コメントアウトは、コードの前に`#` を付けることでできます。<br><br>
+
+WhiteMaskからGeneratorまでをコメントアウトした状態で、再リロードすると<br>
+<img width="428" height="781" alt="image" src="https://github.com/user-attachments/assets/a7580897-b157-455e-b470-39033e0da349" />
+
+<br>
+
+ボタンの数を減らすことができます。<br>
+<img width="1111" height="422" alt="image" src="https://github.com/user-attachments/assets/d1fa2ffa-d902-4344-b4d0-e85be0b8a731" />
+
+<br>
+
+
+
